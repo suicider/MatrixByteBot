@@ -98,7 +98,7 @@ class DatesPlugin(Plugin):
         """
 
         try:
-            tmp_dates_cache = Path('tmp/dates.cache')
+            tmp_dates_cache = Path(self.config['cache'])
             if tmp_dates_cache.exists():
                 file = open(str(tmp_dates_cache), encoding='UTF-8')
                 raw_text = file.read()
@@ -106,6 +106,7 @@ class DatesPlugin(Plugin):
                 if not text:
                     return
             else:
+                DATES_LOG.debug('Dates not cached.') 
                 return
         except OSError as error:
             raise Exception(error)
