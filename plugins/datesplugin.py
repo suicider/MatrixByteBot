@@ -108,11 +108,7 @@ class DatesPlugin(Plugin):
                 if not text:
                     return
             else:
-<<<<<<< HEAD
-                DATES_LOG.debug('Dates not cached.') 
-=======
                 DATES_LOG.error("%s file not found from %s", tmp_dates_cache, os.getcwd())
->>>>>>> a704d6a8278b5ad7c1aa462529b9ee83f5f3a319
                 return
         except OSError as error:
             raise Exception(error)
